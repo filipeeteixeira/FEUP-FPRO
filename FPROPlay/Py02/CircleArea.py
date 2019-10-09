@@ -8,7 +8,7 @@ Created on Thu Oct 10 00:29:56 2019
 
 pi = 3.14159
 
-r = input()
+r = float(input())
 
 area = pi*pow(r,2)
 
