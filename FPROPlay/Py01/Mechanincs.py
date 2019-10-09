@@ -14,10 +14,4 @@ sin_angle = math.sin(angle)
 #lançamento obliquo
 result= (2*cos_angle*sin_angle*(18**2))/(10)
 
-#lançamento horizontal (Angulo 0)
-
-
-if angle==0:
-    result=0
-
-print(int(result))
+print(round(result))
