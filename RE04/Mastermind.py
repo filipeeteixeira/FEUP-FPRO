@@ -6,23 +6,26 @@ Created on Mon Oct 14 12:39:44 2019
 @author: filipe
 """
 
-def mastermind(g1,g2,g3,c1,c2,c3):
+def count_points(g,k):
     points=0
-    guess=[g1,g2,g3]
-    r=[c1,c2,c3]
-    for i in guess:
-        for k in r:
-            print("i:",i)
-            print("k:", k)
-            
-            if i==k:
-                if guess.index(i)==r.index(k):
+    for i in g:
+        for j in k:
+            if (i==j):
+                if(g.index(i)==k.index(j)):
                     points+=3
-                    break
                 else:
                     points+=1
-                    break
-        print(points)
+                g=g[:g.index(i)]+" "+g[g.index(i)+1:]
+                k=k[:k.index(j)]+" "+k[k.index(j)+1:]
+                break
+    return points
+
+def mastermind(g1,g2,g3,c1,c2,c3):
+    guess=g1+g2+g3
+    key=c1+c2+c3
+    
+    points=count_points(guess,key)
+    
     return points
 
 print(mastermind("b","b","y","b","w","b"))
