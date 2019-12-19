@@ -7,16 +7,11 @@ Created on Sun Nov 24 21:34:43 2019
 """
 
 
-def sort_by_value(dictt):
-    ToSort = []
-    for i in dictt.values():
-        number = int(i[1:], 16)
-        ToSort.append(number)
-    ToSort.sort()
-    for i in ToSort:
-        
-    
-    return finalresult
+def sort_rule(item):
+    return int(item[1][1:], 16)
 
+def sort_by_value(dictt):
+    temp = sorted(dictt.items(),key=sort_rule,reverse=False)
+    return temp
 
 print(sort_by_value({'Magenta': '#FF00FF', 'Red': '#FF0000', 'White': '#FFFFFF'}))
